@@ -1,0 +1,547 @@
+{
+  "version": "1.0.0",
+  "type": "mini",
+  "count": 120,
+  "words": [
+    {
+      "word": "abandon",
+      "phonetic": "ə'bændən",
+      "translation": "vt. 放弃, 抛弃, 遗弃",
+      "pos": "vt."
+    },
+    {
+      "word": "ability",
+      "phonetic": "ə'bɪlɪtɪ",
+      "translation": "n. 能力, 才能",
+      "pos": "n."
+    },
+    {
+      "word": "able",
+      "phonetic": "ˈeɪbəl",
+      "translation": "adj. 能够的, 有能力的",
+      "pos": "adj."
+    },
+    {
+      "word": "abnormal",
+      "phonetic": "æb'nɔːməl",
+      "translation": "adj. 反常的, 变态的",
+      "pos": "adj."
+    },
+    {
+      "word": "aboard",
+      "phonetic": "ə'bɔːrd",
+      "translation": "adv. 在船(飞机、车)上",
+      "pos": "adv."
+    },
+    {
+      "word": "abolish",
+      "phonetic": "ə'bɒlɪʃ",
+      "translation": "vt. 废除, 取消",
+      "pos": "vt."
+    },
+    {
+      "word": "abortion",
+      "phonetic": "ə'bɔːrʃn",
+      "translation": "n. 流产, 堕胎",
+      "pos": "n."
+    },
+    {
+      "word": "about",
+      "phonetic": "ə'baʊt",
+      "translation": "prep. 关于, 大约",
+      "pos": "prep."
+    },
+    {
+      "word": "above",
+      "phonetic": "ə'bʌv",
+      "translation": "prep. 在...上方",
+      "pos": "prep."
+    },
+    {
+      "word": "abroad",
+      "phonetic": "ə'brɔːd",
+      "translation": "adv. 到国外, 在国外",
+      "pos": "adv."
+    },
+    {
+      "word": "abrupt",
+      "phonetic": "ə'brʌpt",
+      "translation": "adj. 突然的, 唐突的",
+      "pos": "adj."
+    },
+    {
+      "word": "absence",
+      "phonetic": "ˈæbsəns",
+      "translation": "n. 缺席, 不在场",
+      "pos": "n."
+    },
+    {
+      "word": "absent",
+      "phonetic": "ˈæbsənt",
+      "translation": "adj. 缺席的, 不在的",
+      "pos": "adj."
+    },
+    {
+      "word": "absolute",
+      "phonetic": "ˈæbsəluːt",
+      "translation": "adj. 绝对的, 完全的",
+      "pos": "adj."
+    },
+    {
+      "word": "absorb",
+      "phonetic": "əb'sɔːrb",
+      "translation": "vt. 吸收, 吸引",
+      "pos": "vt."
+    },
+    {
+      "word": "abstract",
+      "phonetic": "ˈæbstrækt",
+      "translation": "adj. 抽象的 n. 摘要",
+      "pos": "adj./n."
+    },
+    {
+      "word": "absurd",
+      "phonetic": "əb'sɜːrd",
+      "translation": "adj. 荒谬的, 可笑的",
+      "pos": "adj."
+    },
+    {
+      "word": "abundant",
+      "phonetic": "ə'bʌndənt",
+      "translation": "adj. 丰富的, 充裕的",
+      "pos": "adj."
+    },
+    {
+      "word": "abuse",
+      "phonetic": "ə'bjuːs",
+      "translation": "n./vt. 滥用, 虐待",
+      "pos": "n./vt."
+    },
+    {
+      "word": "academic",
+      "phonetic": "ˌækə'demɪk",
+      "translation": "adj. 学术的, 理论的",
+      "pos": "adj."
+    },
+    {
+      "word": "academy",
+      "phonetic": "ə'kædəmɪ",
+      "translation": "n. 学院, 研究院",
+      "pos": "n."
+    },
+    {
+      "word": "accelerate",
+      "phonetic": "ək'seləreɪt",
+      "translation": "vt. 加速, 促进",
+      "pos": "vt."
+    },
+    {
+      "word": "accent",
+      "phonetic": "ˈæksənt",
+      "translation": "n. 口音, 重音",
+      "pos": "n."
+    },
+    {
+      "word": "accept",
+      "phonetic": "ək'sept",
+      "translation": "vt. 接受, 认可",
+      "pos": "vt."
+    },
+    {
+      "word": "acceptable",
+      "phonetic": "ək'septəbəl",
+      "translation": "adj. 可接受的",
+      "pos": "adj."
+    },
+    {
+      "word": "access",
+      "phonetic": "ˈækses",
+      "translation": "n. 通道, 接近",
+      "pos": "n."
+    },
+    {
+      "word": "accident",
+      "phonetic": "ˈæksɪdənt",
+      "translation": "n. 事故, 意外",
+      "pos": "n."
+    },
+    {
+      "word": "accidental",
+      "phonetic": "ˌæksɪ'dentəl",
+      "translation": "adj. 意外的, 偶然的",
+      "pos": "adj."
+    },
+    {
+      "word": "accommodate",
+      "phonetic": "ə'kɒmədeɪt",
+      "translation": "vt. 适应, 容纳",
+      "pos": "vt."
+    },
+    {
+      "word": "accompany",
+      "phonetic": "ə'kʌmpənɪ",
+      "translation": "vt. 伴随, 伴奏",
+      "pos": "vt."
+    },
+    {
+      "word": "accomplish",
+      "phonetic": "ə'kʌmplɪʃ",
+      "translation": "vt. 完成, 实现",
+      "pos": "vt."
+    },
+    {
+      "word": "accord",
+      "phonetic": "ə'kɔːrd",
+      "translation": "n./vt. 一致, 给予",
+      "pos": "n./vt."
+    },
+    {
+      "word": "according",
+      "phonetic": "ə'kɔːrdɪŋ",
+      "translation": "adv. 根据, 按照",
+      "pos": "adv."
+    },
+    {
+      "word": "accordingly",
+      "phonetic": "ə'kɔːrdɪŋlɪ",
+      "translation": "adv. 因此, 于是",
+      "pos": "adv."
+    },
+    {
+      "word": "account",
+      "phonetic": "ə'kaʊnt",
+      "translation": "n. 账户, 描述",
+      "pos": "n."
+    },
+    {
+      "word": "accumulate",
+      "phonetic": "ə'kjuːmjəleɪt",
+      "translation": "vt. 积累, 积聚",
+      "pos": "vt."
+    },
+    {
+      "word": "accuracy",
+      "phonetic": "ˈækjərəsɪ",
+      "translation": "n. 准确性, 精确度",
+      "pos": "n."
+    },
+    {
+      "word": "accurate",
+      "phonetic": "ˈækjərət",
+      "translation": "adj. 准确的, 精确的",
+      "pos": "adj."
+    },
+    {
+      "word": "accuse",
+      "phonetic": "ə'kjuːz",
+      "translation": "vt. 指控, 控告",
+      "pos": "vt."
+    },
+    {
+      "word": "achieve",
+      "phonetic": "ə'tʃiːv",
+      "translation": "vt. 完成, 实现",
+      "pos": "vt."
+    },
+    {
+      "word": "achievement",
+      "phonetic": "ə'tʃiːvmənt",
+      "translation": "n. 成就, 成绩",
+      "pos": "n."
+    },
+    {
+      "word": "acid",
+      "phonetic": "ˈæsɪd",
+      "translation": "n. 酸 adj. 酸的",
+      "pos": "n./adj."
+    },
+    {
+      "word": "acknowledge",
+      "phonetic": "ək'nɒlɪdʒ",
+      "translation": "vt. 承认, 答谢",
+      "pos": "vt."
+    },
+    {
+      "word": "acquaintance",
+      "phonetic": "ə'kweɪntəns",
+      "translation": "n. 熟人, 相识",
+      "pos": "n."
+    },
+    {
+      "word": "acquire",
+      "phonetic": "ə'kwaɪər",
+      "translation": "vt. 获得, 学到",
+      "pos": "vt."
+    },
+    {
+      "word": "acquisition",
+      "phonetic": "ˌækwɪ'zɪʃn",
+      "translation": "n. 获得, 收购",
+      "pos": "n."
+    },
+    {
+      "word": "across",
+      "phonetic": "ə'krɒs",
+      "translation": "prep. 横过, 在对面",
+      "pos": "prep."
+    },
+    {
+      "word": "act",
+      "phonetic": "ækt",
+      "translation": "n./vi. 行动, 表演",
+      "pos": "n./vi."
+    },
+    {
+      "word": "action",
+      "phonetic": "ˈækʃn",
+      "translation": "n. 行动, 动作",
+      "pos": "n."
+    },
+    {
+      "word": "active",
+      "phonetic": "ˈæktɪv",
+      "translation": "adj. 积极的, 活跃的",
+      "pos": "adj."
+    },
+    {
+      "word": "activity",
+      "phonetic": "æk'tɪvɪtɪ",
+      "translation": "n. 活动, 活跃",
+      "pos": "n."
+    },
+    {
+      "word": "actor",
+      "phonetic": "ˈæktər",
+      "translation": "n. 男演员, 行动者",
+      "pos": "n."
+    },
+    {
+      "word": "actress",
+      "phonetic": "ˈæktrəs",
+      "translation": "n. 女演员",
+      "pos": "n."
+    },
+    {
+      "word": "actual",
+      "phonetic": "ˈæktʃuəl",
+      "translation": "adj. 实际的, 真实的",
+      "pos": "adj."
+    },
+    {
+      "word": "actually",
+      "phonetic": "ˈæktʃuəlɪ",
+      "translation": "adv. 实际上, 竟然",
+      "pos": "adv."
+    },
+    {
+      "word": "acute",
+      "phonetic": "ə'kjuːt",
+      "translation": "adj. 尖锐的, 急性的",
+      "pos": "adj."
+    },
+    {
+      "word": "ad",
+      "phonetic": "æd",
+      "translation": "n. 广告",
+      "pos": "n."
+    },
+    {
+      "word": "adapt",
+      "phonetic": "ə'dæpt",
+      "translation": "vt. 适应, 改编",
+      "pos": "vt."
+    },
+    {
+      "word": "add",
+      "phonetic": "æd",
+      "translation": "vt. 添加, 增加",
+      "pos": "vt."
+    },
+    {
+      "word": "addition",
+      "phonetic": "ə'dɪʃn",
+      "translation": "n. 添加, 加法",
+      "pos": "n."
+    },
+    {
+      "word": "additional",
+      "phonetic": "ə'dɪʃənəl",
+      "translation": "adj. 额外的, 附加的",
+      "pos": "adj."
+    },
+    {
+      "word": "address",
+      "phonetic": "ə'dres",
+      "translation": "n. 地址, 演说",
+      "pos": "n."
+    },
+    {
+      "word": "adequate",
+      "phonetic": "ˈædɪkwət",
+      "translation": "adj. 足够的, 胜任的",
+      "pos": "adj."
+    },
+    {
+      "word": "adjust",
+      "phonetic": "ə'dʒʌst",
+      "translation": "vt. 调整, 适应",
+      "pos": "vt."
+    },
+    {
+      "word": "administration",
+      "phonetic": "ədˌmɪnɪ'streɪʃn",
+      "translation": "n. 管理, 行政",
+      "pos": "n."
+    },
+    {
+      "word": "administrative",
+      "phonetic": "əd'mɪnɪstrətɪv",
+      "translation": "adj. 管理的, 行政的",
+      "pos": "adj."
+    },
+    {
+      "word": "admire",
+      "phonetic": "əd'maɪər",
+      "translation": "vt. 钦佩, 欣赏",
+      "pos": "vt."
+    },
+    {
+      "word": "admission",
+      "phonetic": "əd'mɪʃn",
+      "translation": "n. 允许进入, 承认",
+      "pos": "n."
+    },
+    {
+      "word": "admit",
+      "phonetic": "əd'mɪt",
+      "translation": "vt. 承认, 准许进入",
+      "pos": "vt."
+    },
+    {
+      "word": "adopt",
+      "phonetic": "ə'dɒpt",
+      "translation": "vt. 采纳, 收养",
+      "pos": "vt."
+    },
+    {
+      "word": "adult",
+      "phonetic": "ə'dʌlt",
+      "translation": "n. 成年人 adj. 成年的",
+      "pos": "n./adj."
+    },
+    {
+      "word": "advance",
+      "phonetic": "əd'væns",
+      "translation": "vi./n. 前进, 预付",
+      "pos": "vi./n."
+    },
+    {
+      "word": "advanced",
+      "phonetic": "əd'vænst",
+      "translation": "adj. 先进的, 高级的",
+      "pos": "adj."
+    },
+    {
+      "word": "advantage",
+      "phonetic": "əd'væntɪdʒ",
+      "translation": "n. 优势, 好处",
+      "pos": "n."
+    },
+    {
+      "word": "these",
+      "phonetic": "ðiːz",
+      "translation": "pron. 这些",
+      "pos": "pron."
+    },
+    {
+      "word": "period",
+      "phonetic": "'pɪərɪəd",
+      "translation": "n. 时期, 周期",
+      "pos": "n."
+    },
+    {
+      "word": "territory",
+      "phonetic": "'terɪtɔːrɪ",
+      "translation": "n. 领土, 领域",
+      "pos": "n."
+    },
+    {
+      "word": "when",
+      "phonetic": "wen",
+      "translation": "conj. 当...时",
+      "pos": "conj."
+    },
+    {
+      "word": "place",
+      "phonetic": "pleɪs",
+      "translation": "n. 地方, 位置",
+      "pos": "n."
+    },
+    {
+      "word": "events",
+      "phonetic": "ɪ'vents",
+      "translation": "n. 事件, 活动",
+      "pos": "n."
+    },
+    {
+      "word": "took",
+      "phonetic": "tʊk",
+      "translation": "v. 拿, 取 (take的过去式)",
+      "pos": "v."
+    },
+    {
+      "word": "just",
+      "phonetic": "dʒʌst",
+      "translation": "adv. 刚刚, 仅仅",
+      "pos": "adv."
+    },
+    {
+      "word": "returned",
+      "phonetic": "rɪ'tɜːnd",
+      "translation": "v. 返回, 归还 (return的过去式)",
+      "pos": "v."
+    },
+    {
+      "word": "from",
+      "phonetic": "frɒm",
+      "translation": "prep. 从, 来自",
+      "pos": "prep."
+    },
+    {
+      "word": "scientific",
+      "phonetic": "ˌsaɪən'tɪfɪk",
+      "translation": "adj. 科学的",
+      "pos": "adj."
+    },
+    {
+      "word": "research",
+      "phonetic": "rɪ'sɜːtʃ",
+      "translation": "n. 研究, 调查",
+      "pos": "n."
+    },
+    {
+      "word": "disagreeable",
+      "phonetic": "ˌdɪsə'griːəbl",
+      "translation": "adj. 令人不快的, 不合意的",
+      "pos": "adj."
+    },
+    {
+      "word": "Nebraska",
+      "phonetic": "nɪ'bræskə",
+      "translation": "n. 内布拉斯加州 (美国州名)",
+      "pos": "n."
+    },
+    {
+      "word": "United",
+      "phonetic": "juː'naɪtɪd",
+      "translation": "adj. 联合的, 统一的",
+      "pos": "adj."
+    },
+    {
+      "word": "States",
+      "phonetic": "steɪts",
+      "translation": "n. 州, 国家",
+      "pos": "n."
+    }
+  ]
+}

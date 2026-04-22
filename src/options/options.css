@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #111318;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.options-container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.options-header {
+  margin-bottom: 28px;
+}
+
+.options-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: #f2f5ff;
+}
+
+.options-subtitle {
+  font-size: 15px;
+  color: #aab4d6;
+  margin: 0;
+}
+
+.option-group {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.option-group-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: #f2f5ff;
+}
+
+.option-item {
+  margin-bottom: 16px;
+}
+
+.option-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #c5cee8;
+}
+
+.option-select {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.option-select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.18);
+}
+
+.save-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+  background: #45a049;
+}
+
+.status-message {
+  margin-top: 15px;
+  padding: 11px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.status-message.success {
+  background: rgba(76, 175, 80, 0.16);
+  color: #85d98a;
+  border: 1px solid rgba(76, 175, 80, 0.28);
+}
+
+.status-message.error {
+  background: rgba(244, 67, 54, 0.16);
+  color: #ff9f97;
+  border: 1px solid rgba(244, 67, 54, 0.28);
+}

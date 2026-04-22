@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Magnifier Translator",
+  "description": "双击选词即时翻译插件。快速准确的英译汉词典，支持离线使用，让外语阅读更加轻松流畅。",
+  "version": "1.0.0",
+  "permissions": [
+    "translation",
+    "storage"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "data/dictionary-mini.json",
+        "data/dictionary-large.json"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.ts"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/content-script.tsx"],
+      "css": ["src/content/styles.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "Magnifier Translator",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "options_page": "src/options/options.html",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
