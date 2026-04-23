@@ -62,10 +62,61 @@ npm run build
 
 ## 如何使用
 
-1. 在网页中双击或选择一个英文单词
-2. 插件会自动显示翻译结果
-3. 翻译结果会显示原文、译文、音标（如果有）
-4. 同时会标明翻译来源（离线词典或在线翻译）
+1. **安装扩展**：在Chrome扩展管理页面加载已解压的扩展程序
+2. **启用插件**：点击插件图标确保插件已启用
+3. **开始翻译**：在网页中双击或选择一个英文单词
+4. **查看结果**：插件会自动显示翻译结果
+5. **翻译信息**：显示原文、译文、音标（如果有）和翻译来源
+
+## 功能演示
+
+### 正确使用效果
+
+![正确使用效果](images/使用页面.png)
+
+### 双击翻译
+
+![双击翻译演示](https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chrome%20browser%20extension%20demo%20showing%20translation%20tooltip%20when%20double%20clicking%20on%20an%20English%20word%20on%20a%20webpage&image_size=landscape_16_9)
+
+### 选择翻译
+
+![选择翻译演示](https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chrome%20extension%20translation%20tooltip%20showing%20when%20selecting%20an%20English%20word%20on%20a%20webpage&image_size=landscape_16_9)
+
+### 离线词典
+
+![离线词典演示](https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chrome%20extension%20showing%20offline%20dictionary%20translation%20tooltip%20with%20phonetic%20pronunciation&image_size=landscape_16_9)
+
+## 已知问题
+
+### Edge浏览器兼容性问题
+- **问题**：在Microsoft Edge浏览器中，插件只能翻译一个单词，后续单词翻译失败
+- **原因**：可能与Edge浏览器的网络请求处理机制有关，Google Translate API请求在Edge中容易超时
+- **临时解决方案**：
+  1. 优先使用离线词典（已优化为优先加载迷你词典）
+  2. 确保网络连接稳定
+  3. 尝试在Chrome浏览器中使用，Chrome浏览器支持良好
+
+### 网络请求超时
+- **问题**：在线翻译请求可能会超时，特别是在网络不稳定的情况下
+- **解决方案**：已添加5秒超时设置，超时后会自动使用离线词典或显示错误信息
+
+## 后续更新计划
+
+### 短期计划（1-2周）
+1. **Edge浏览器兼容性修复**：针对Edge浏览器的网络请求处理进行优化
+2. **离线词典增强**：扩充离线词典词汇量，减少对在线翻译的依赖
+3. **错误处理优化**：进一步完善错误处理机制，提高插件稳定性
+
+### 中期计划（1-2个月）
+1. **多语言支持**：添加更多目标语言选项
+2. **用户界面优化**：改进tooltip设计和交互体验
+3. **性能优化**：进一步优化词典加载和缓存机制
+
+### 长期计划
+1. **自定义词典**：支持用户添加和管理自定义词典
+2. **翻译历史**：添加翻译历史记录功能
+3. **多平台支持**：尝试支持Firefox等其他浏览器
+4. **发布到插件市场**：发布到Chrome Web Store和Microsoft Edge Add-ons
 
 ## 离线词典说明
 

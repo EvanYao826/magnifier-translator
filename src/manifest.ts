@@ -9,7 +9,7 @@ export default defineManifest({
   host_permissions: ['https://translate.googleapis.com/*'],
   web_accessible_resources: [
     {
-      resources: ['data/dictionary-mini.json'],
+      resources: ['data/dictionary-mini.json', 'data/dictionary-large.json'],
       matches: ['<all_urls>'],
       use_dynamic_url: false
     }

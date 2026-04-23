@@ -26,7 +26,21 @@ export async function loadDictionary(): Promise<void> {
 
   dictionaryLoadPromise = (async () => {
     try {
-      const response = await fetch(chrome.runtime.getURL('data/dictionary-large.json'));
+      // 优先加载迷你词典，减少加载时间和失败概率
+      // 为迷你词典加载添加超时设置（5秒）
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
+      
+      const response = await fetch(chrome.runtime.getURL('data/dictionary-mini.json'), {
+        signal: controller.signal
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (!response.ok) {
+        throw new Error(`迷你词典加载失败: HTTP ${response.status}`);
+      }
+      
       const data = await response.json() as DictionaryData;
 
       wordIndex.clear();
@@ -35,11 +49,24 @@ export async function loadDictionary(): Promise<void> {
       });
 
       dictionaryData = data;
-      console.log(`离线词典已加载: ${data.count} 个词条`);
+      console.log(`离线词典已加载（迷你版）: ${data.count} 个词条`);
     } catch (error) {
-      console.warn('大型词典加载失败，尝试加载迷你词典:', error);
+      console.warn('迷你词典加载失败，尝试加载大型词典:', error);
       try {
-        const response = await fetch(chrome.runtime.getURL('data/dictionary-mini.json'));
+        // 为大型词典加载添加超时设置（10秒）
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000);
+        
+        const response = await fetch(chrome.runtime.getURL('data/dictionary-large.json'), {
+          signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+        
+        if (!response.ok) {
+          throw new Error(`大型词典加载失败: HTTP ${response.status}`);
+        }
+        
         const data = await response.json() as DictionaryData;
 
         wordIndex.clear();
@@ -48,10 +75,10 @@ export async function loadDictionary(): Promise<void> {
         });
 
         dictionaryData = data;
-        console.log(`离线词典已加载（迷你版）: ${data.count} 个词条`);
+        console.log(`离线词典已加载: ${data.count} 个词条`);
       } catch (fallbackError) {
-        console.error('迷你词典也加载失败:', fallbackError);
-        throw fallbackError;
+        console.error('所有词典加载失败:', fallbackError);
+        // 即使词典加载失败，也不抛出错误，而是继续执行
       }
     }
   })();

@@ -30,39 +30,56 @@ void initialize();
 async function initialize() {
   try {
     settings = await getUserSettings();
+    console.log('用户设置加载成功:', settings);
   } catch (error) {
     console.warn('获取用户设置失败，使用默认设置:', error);
+    // 确保使用默认设置
+    settings = {
+      targetLanguage: 'zh-CN',
+      enabled: true
+    };
   }
 
-  chrome.storage.onChanged.addListener((changes, areaName) => {
-    if (areaName !== 'local') return;
+  try {
+    chrome.storage.onChanged.addListener((changes, areaName) => {
+      if (areaName !== 'local') return;
 
-    if (changes.targetLanguage?.newValue) {
-      settings.targetLanguage = changes.targetLanguage.newValue;
-      clearTranslationCache();
-      hideTooltip();
-    }
+      if (changes.targetLanguage?.newValue) {
+        settings.targetLanguage = changes.targetLanguage.newValue;
+        clearTranslationCache();
+        hideTooltip();
+        console.log('目标语言已更新为:', changes.targetLanguage.newValue);
+      }
 
-    if (typeof changes.enabled?.newValue === 'boolean') {
-      settings.enabled = changes.enabled.newValue;
-      if (!settings.enabled) {
-        clearActiveSelection();
+      if (typeof changes.enabled?.newValue === 'boolean') {
+        settings.enabled = changes.enabled.newValue;
+        console.log('插件状态已更新为:', changes.enabled.newValue ? '启用' : '禁用');
+        if (!settings.enabled) {
+          clearActiveSelection();
+          hideTooltip();
+        }
+      }
+    });
+  } catch (error) {
+    console.warn('添加存储变更监听器失败:', error);
+  }
+
+  try {
+    document.addEventListener('dblclick', handleSelectionTrigger);
+    document.addEventListener('mouseup', handleSelectionTrigger);
+    document.addEventListener('selectionchange', handleSelectionChange);
+    document.addEventListener('scroll', hideTooltip, true);
+    document.addEventListener('mousedown', handlePointerDown, true);
+    window.addEventListener('blur', hideTooltip);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
         hideTooltip();
       }
-    }
-  });
-
-  document.addEventListener('dblclick', handleSelectionTrigger);
-  document.addEventListener('mouseup', handleSelectionTrigger);
-  document.addEventListener('selectionchange', handleSelectionChange);
-  document.addEventListener('scroll', hideTooltip, true);
-  document.addEventListener('mousedown', handlePointerDown, true);
-  window.addEventListener('blur', hideTooltip);
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      hideTooltip();
-    }
-  });
+    });
+    console.log('事件监听器已成功添加');
+  } catch (error) {
+    console.warn('添加事件监听器失败:', error);
+  }
 }
 
 async function getTranslation(word: string): Promise<TranslationResult> {
@@ -71,12 +88,16 @@ async function getTranslation(word: string): Promise<TranslationResult> {
   const cached = translationCache.get(cacheKey);
 
   if (cached) {
+    console.log('从缓存获取翻译结果:', word);
     return cached;
   }
 
   try {
+    console.log('开始翻译:', word);
+    // 优先尝试离线翻译
     const offlineResult = await getOfflineTranslation(normalizedWord);
     if (offlineResult) {
+      console.log('离线词典翻译成功:', word);
       const result: TranslationResult = {
         text: offlineResult.translation,
         phonetic: offlineResult.phonetic,
@@ -86,18 +107,42 @@ async function getTranslation(word: string): Promise<TranslationResult> {
       return result;
     }
 
-    const translatedText = await translateText(normalizedWord, settings.targetLanguage);
-    const result: TranslationResult = {
-      text: translatedText,
-      isOffline: false
-    };
-
-    translationCache.set(cacheKey, result);
-    return result;
+    console.log('离线词典无结果，尝试在线翻译:', word);
+    // 在线翻译添加超时处理
+    try {
+      const translatedText = await translateText(normalizedWord, settings.targetLanguage);
+      const result: TranslationResult = {
+        text: translatedText,
+        isOffline: false
+      };
+      console.log('在线翻译成功:', word, '->', translatedText);
+      translationCache.set(cacheKey, result);
+      return result;
+    } catch (onlineError) {
+      console.warn('在线翻译失败，使用离线词典兜底:', onlineError);
+      // 再次尝试离线翻译，确保没有遗漏
+      const offlineResultAgain = await getOfflineTranslation(normalizedWord);
+      if (offlineResultAgain) {
+        const result: TranslationResult = {
+          text: offlineResultAgain.translation,
+          phonetic: offlineResultAgain.phonetic,
+          isOffline: true
+        };
+        translationCache.set(cacheKey, result);
+        return result;
+      }
+      // 所有翻译都失败
+      const result: TranslationResult = {
+        text: '翻译失败，请检查网络连接或稍后重试',
+        isOffline: false
+      };
+      translationCache.set(cacheKey, result);
+      return result;
+    }
   } catch (error) {
-    console.warn('翻译失败，返回原文:', error);
+    console.warn('翻译失败，显示错误信息:', error);
     const result: TranslationResult = {
-      text: word,
+      text: '翻译失败，请检查网络连接或稍后重试',
       isOffline: false
     };
     translationCache.set(cacheKey, result);
@@ -138,17 +183,21 @@ async function showSelectionTranslation(match: SelectionMatch) {
   const requestId = ++activeRequestId;
   
   try {
+    console.log('开始处理选择翻译:', match.word);
     const translation = await getTranslation(match.word);
 
     if (requestId !== activeRequestId || selectedWord !== match.word) {
+      console.log('翻译请求已过期，忽略结果:', match.word);
       return;
     }
 
     if (!translation.text || translation.text.toLowerCase() === match.word.toLowerCase()) {
+      console.log('翻译结果为空或与原文相同，隐藏tooltip:', match.word);
       hideTooltip();
       return;
     }
 
+    console.log('准备显示翻译结果:', match.word, '->', translation.text);
     renderTooltip(match, translation);
   } catch (error) {
     console.warn('显示翻译失败:', error);
